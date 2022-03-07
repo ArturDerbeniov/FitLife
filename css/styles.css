@@ -979,10 +979,28 @@ p {
 	.headerMain_obj_lang {
 		margin-top: 20px;
 		border-top: 1px solid #42AD93;
-		padding: 20px 0;
+		padding: 24px 0 5px;
 	}
-	.headerMain_obj_lang .dropdown_lang_toggle {
+	.dropdown_lang_toggle {
 		color: #000 !important;
+	}
+	.dropdown_lang_toggle::after {
+		transform: rotate(-90deg);
+	}
+	.dropdown_lang.active .dropdown-menu {
+		display: flex;
+		width: 100px;
+		left: 42px;
+		top: -14px;
+	}
+	.dropdown_lang.active .dropdown-menu::after {
+		content: "";
+		position: absolute;
+		width: 0.05em;
+		background-color: rgba(0,0,0,.15);
+		left: 50px;
+		top: 8px;
+		bottom: 8px;
 	}
 }
 @media (min-width: 768px) {
