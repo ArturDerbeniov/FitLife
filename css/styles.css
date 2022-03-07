@@ -853,6 +853,16 @@ p {
 	width: 100%;
 }
 @media (max-width: 767px) {
+	.headerMain {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    z-index: 101;
+	}
+	.body-inner {
+		margin-top: 81px;
+	}
 	html.setReadyMobileMenu,
 	html.setReadyMobileMenu body {
 		overflow: hidden;
@@ -863,9 +873,9 @@ p {
 	html.mobileMenuOpened .headerMain_allObjs {
 		right: 0;
 	}
-	html.setReadyMobileMenu::before {
+	html.setReadyMobileMenu body::before {
 		content: "";
-		position: absolute;
+		position: fixed;
 		background-color: rgba(0,0,0,.0);
 		top: 83px;
 		left: 0;
@@ -874,7 +884,7 @@ p {
 		z-index: 100;
 		transition: background-color .4s;
 	}
-	html.mobileMenuOpened::before {
+	html.mobileMenuOpened body::before {
 		background-color: rgba(0,0,0,.8);		
 	}
 	html.mobileMenuOpened .headerMain-bars::before {
