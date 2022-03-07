@@ -48,6 +48,14 @@ function eventDocClick(e) {
             }
             break;
         }
+        if(targ.tagName == "BODY" && document.documentElement.classList.contains('mobileMenuOpened')) {
+            var html = document.documentElement;
+            html.classList.remove('mobileMenuOpened');
+                setTimeout(function() {
+                    html.classList.remove('setReadyMobileMenu');
+                },400);
+            break;
+        }
 
         targ = targ.parentNode;
     }
